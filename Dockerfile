@@ -1,16 +1,10 @@
-FROM python:3.9-slim
+FROM python:3.9-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy files
-COPY flask.py /app1.py
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
 
-# Install dependencies
-RUN pip3 install flask
+COPY app.py .
 
-# Expose port
-EXPOSE 5000
-
-# Run the application
-CMD ["python3", "/app.py"]
+CMD ["python3", "app.py"]
