@@ -4,7 +4,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy files
-COPY . .
+COPY flask.py /app1.py
 
 # Install dependencies
 RUN pip install -r requirements.txt
@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Run the application
-CMD ["python", "app.py"]
+CMD ["python3", "/app.py"]
