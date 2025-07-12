@@ -6,4 +6,4 @@ def myinfo():
 @app.route("/phone")
 def myphone():
     return "9594305676"
-app.run(host="0.0.0.0")
+app.run(host="0.0.0.0",port=5000)
